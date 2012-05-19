@@ -1,0 +1,20 @@
+#!/bin/sh
+
+debug=0
+
+for a in $@; do
+    if [ $a = '-debug' ]; then
+        debug=1
+        break
+    fi
+done
+
+if [ $debug -eq 1 ]; then
+    echo 'CFLAGS=-Wall -W -Werror -g' > makefile.rule
+else
+    echo 'CFLAGS=-Wall -W -Werror -O3' > makefile.rule
+fi
+
+echo 'CC=/usr/bin/g++' >> makefile.rule
+echo "BINARY='lol'" >> makefile.rule
+
