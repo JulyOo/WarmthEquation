@@ -12,12 +12,12 @@ Point::~Point ()
 {
 }
 
-Point* Point::operator- (Point p)
+Point* Point::operator- (Point& p)
 {
   return new Point(x_ - p.x_, y_ - p.y_);
 }
 
-double Point::operator* (Point p)
+double Point::operator* (Point& p)
 {
   return x_ * p.x_ + y_ * p.y_;
 }
@@ -37,12 +37,12 @@ double Point::y_get ()
   return y_;
 }
 
-bool Point::samex (Point p)
+bool Point::samex (Point& p)
 {
   return x_ == p.x_;
 }
 
-bool Point::samey (Point p)
+bool Point::samey (Point& p)
 {
   return y_ == p.y_;
 }

@@ -1,6 +1,6 @@
 -include ../makefile.rule
 
-SOURCES = geometry/point.cc
+SOURCES = geometry/point.cc geometry/border.cc main.cc warmth-source.cc
 
 FILEO= ${SOURCES:.cc=.o}
 

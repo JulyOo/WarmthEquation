@@ -7,12 +7,12 @@ class Point
     Point (double x, double y);
     ~Point ();
 
-    Point* operator- (Point p);
-    double operator* (Point p);
+    Point* operator- (Point& p);
+    double operator* (Point& p);
     double distance ();
 
-    bool samex (Point p);
-    bool samey (Point p);
+    bool samex (Point& p);
+    bool samey (Point& p);
 
     double x_get ();
     double y_get ();
