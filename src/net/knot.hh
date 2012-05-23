@@ -1,7 +1,10 @@
 #ifndef KNOT_HH_
 # define KNOT_HH_
 
-class Point;
+# include <iostream>
+
+# include "../geometry/point.hh"
+
 
 class Knot
 {
@@ -18,17 +21,19 @@ class Knot
     Knot (double x, double y);
     ~Knot ();
 
-    void set_point (Point* p, Direction d);
-    Point* get_point (Direction d);
+    void set_point (Knot* p, Direction d);
+    Knot* get_point (Direction d);
 
     Point& point_get ();
 
   private:
     Point p_;
-    Point* up_;
-    Point* right_;
-    Point* down_;
-    Point* left_;
+    Knot* up_;
+    Knot* right_;
+    Knot* down_;
+    Knot* left_;
 };
+
+std::ostream& operator<< (std::ostream& o, Knot& k);
 
 #endif /* !KNOT_HH_ */

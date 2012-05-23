@@ -16,5 +16,5 @@ else
 fi
 
 echo 'CC=/usr/bin/g++' >> makefile.rule
-echo "BINARY='lol'" >> makefile.rule
+echo "BINARY='elfi'" >> makefile.rule
 

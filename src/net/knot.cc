@@ -1,12 +1,12 @@
 #include "knot.hh"
-#include "../geometry/point.hh"
+#include <iostream>
 
 Knot::Knot (double x, double y)
   : p_ (Point (x, y)),
     up_ (NULL),
     right_ (NULL),
     down_ (NULL),
-    left_ (NULL),
+    left_ (NULL)
 
 {
 }
@@ -15,7 +15,7 @@ Knot::~Knot()
 {
 }
 
-void set_point (Point* p, Direction d)
+void Knot::set_point (Knot* p, Direction d)
 {
   if (d == UP)
     up_ = p;
@@ -27,7 +27,7 @@ void set_point (Point* p, Direction d)
     left_ = p;
 }
 
-Point* get_point (Direction d)
+Knot* Knot::get_point (Direction d)
 {
   if (d == UP)
     return up_;
@@ -37,9 +37,17 @@ Point* get_point (Direction d)
     return right_;
   else if (d == LEFT)
     return left_;
+
+  return NULL;
 }
 
-Point& point_get ()
+Point& Knot::point_get ()
 {
   return p_;
+}
+
+std::ostream& operator<< (std::ostream& o, Knot& k)
+{
+  o << k.point_get ().x_get () << "\t" << k.point_get ().y_get () << std::endl;
+  return o;
 }

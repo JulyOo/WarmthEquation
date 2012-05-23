@@ -12,3 +12,9 @@ clean:
 
 distclean: clean
 	rm -rf makefile.rule ${BINARY}
+
+plot: all
+	./elfi -p > tmp
+	echo 'plot "tmp"' | gnuplot -p
+	rm tmp
+

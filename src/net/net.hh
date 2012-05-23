@@ -2,9 +2,10 @@
 # define NET_HH_
 
 # include <list>
+# include <iostream>
 
 class Knot;
-
+class Border;
 
 class Net
 {
@@ -13,6 +14,9 @@ class Net
     Net (std::list<double>& xpace, std::list<double>& ypace);
     ~Net ();
 
+    void compute_net (Border& b);
+
+    void print_net (std::ostream& o);
 
   private:
     std::list<Knot*> nodes_;
